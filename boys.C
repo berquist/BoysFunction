@@ -70,7 +70,10 @@ inline F BoysTerm(T n, T k, F x)
 
 int main(int argc, char* argv[])
 {
-    int n = ( argc>1 ? atoi(argv[1]) : 0 );
+    if (argc==1)
+        printf("Usage: ./boys.x n x\n");
+
+    int n     = ( argc>1 ? atoi(argv[1]) : 0 );
     double x  = ( argc>2 ? atof(argv[2]) : 0.0 );
 
     printf("n = %d x = %lf \n", n, x );
@@ -81,7 +84,7 @@ int main(int argc, char* argv[])
     double knsum;
     double bterm_even;
     double bterm_odd;
-    double fast;      
+    double fast;
 
 #if DEBUG
     fflush(stdout);
