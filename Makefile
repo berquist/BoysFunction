@@ -13,4 +13,5 @@ all: boys.x
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	$(RM) -f *.o *.x *.x.dSYM
+	$(RM) -f *.o *.x
+	$(RM) -rf *.x.dSYM
