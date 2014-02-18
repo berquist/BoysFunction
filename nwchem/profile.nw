@@ -1,0 +1,61 @@
+echo
+
+start profile
+
+permanent_dir /tmp
+scratch_dir /tmp
+
+memory stack 2000 mb heap 180 mb global 1000 mb noverify
+
+geometry noautosym noautoz
+  C     1.170639    1.170639    1.170639
+  C     1.894104    0.000000    0.723495
+  C    -1.170639   -1.170639    1.170639
+  C     1.170639   -1.170639    1.170639
+  C    -1.170639    1.170639    1.170639
+  C     0.000000   -0.723495    1.894104
+  C     0.723495    1.894104    0.000000
+  C     0.000000    0.723495    1.894104
+  C     1.894104    0.000000   -0.723495
+  C     0.723495   -1.894104    0.000000
+  C    -1.894104    0.000000    0.723495
+  C    -0.723495    1.894104    0.000000
+  C     1.170639    1.170639   -1.170639
+  C     1.170639   -1.170639   -1.170639
+  C    -0.723495   -1.894104    0.000000
+  C    -1.894104    0.000000   -0.723495
+  C    -1.170639    1.170639   -1.170639
+  C     0.000000    0.723495   -1.894104
+  C     0.000000   -0.723495   -1.894104
+  C    -1.170639   -1.170639   -1.170639
+end
+
+basis dz spherical
+  * library 6-31G
+end
+
+basis pvdz spherical
+  * library cc-pvdz
+end
+
+basis pvtz spherical
+  * library cc-pvtz
+end
+
+set "ao basis" dz
+
+set int:cando_txs f
+
+scf
+  rhf
+  singlet
+  thresh 1.0e-7
+  direct
+end
+
+dft
+  xc b3lyp
+  direct
+end
+
+task scf energy
