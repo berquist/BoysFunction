@@ -1,10 +1,10 @@
 CC       = clang
 CXX      = clang++
-FLAGS    = -O3 -g -Wall
+FLAGS    = -O3 -g -Wall -DDEBUG
 CFLAGS   = $(FLAGS) -std=c99
 CXXFLAGS = $(FLAGS) -std=c++11
 
-all: boys.x
+all: boys.x newboys.x
 
 %.x: %.C
 	$(CXX) $(CXXFLAGS) $< -o $@

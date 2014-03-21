@@ -50,9 +50,9 @@ inline T Sign(T k)
 template <typename T>
 inline T SignPow(T k)
 {
-    // return ( k%2==0 ? T(1) : T(-1) );
+    return ( k%2==0 ? T(1) : T(-1) );
     // return ( k%2>0 ? T(-1) : T(1) );
-    return ( T( 1-2*(k%2) ) );
+    //return ( T( 1-2*(k%2) ) );
 }
 
 template <typename T, typename F>
@@ -91,8 +91,8 @@ int main(int argc, char* argv[])
     printf("===================================================\n");
 
     //printf("%4s %2s %10s %14s %14s %14s %14s %2s \n", "n", "k", "x", "1/k!", "x^k", "k,BoysTerm(n,k,x)", "sum" );
-    if (x<10.0) printf("%3s %3s %10s %14s %14s %14s %14s      \n", "n", "k", "x", "k!", "x^k", "BoysTerm(n,k,x)", "sum" );
-    else        printf("%3s %3s %10s %14s %14s %14s %14s %14s \n", "n", "k", "x", "k!", "x^k", "BoysTerm(n,k,x)", "sum", "BoysAsymp(n,x)" );
+    if (x<1.0) printf("%3s %3s %10s %14s %14s %14s %14s      \n", "n", "k", "x", "k!", "x^k", "BoysTerm(n,k,x)", "sum" );
+    else       printf("%3s %3s %10s %14s %14s %14s %14s %14s \n", "n", "k", "x", "k!", "x^k", "BoysTerm(n,k,x)", "sum", "BoysAsymp(n,x)" );
     double b = 0.0, s = 0.0;
     k = 0;
     while( (k<200) && (fabs(b=BoysTerm(n,k,x))>1.0e-16) && (fabs(b)<1.0e10))
