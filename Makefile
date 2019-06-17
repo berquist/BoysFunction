@@ -1,7 +1,7 @@
 CC       = clang
 CXX      = clang++
 FLAGS    = -O3 -g -Wall -DDEBUG
-CFLAGS   = $(FLAGS) -std=c99
+CFLAGS   = $(FLAGS) -std=gnu99 -lm
 CXXFLAGS = $(FLAGS) -std=c++11
 
 all: boys.x newboys.x
